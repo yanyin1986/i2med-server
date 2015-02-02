@@ -89,8 +89,8 @@ func (c UserController) Register() revel.Result {
 	} else {
 		user.Id = id
 		return c.RenderJson(CommonResult{
-			ErrorCode:    999,
-			ErrorMessage: "错误啦啦啦啦",
+			ErrorCode:    0,
+			ErrorMessage: "",
 			Result:       user,
 		})
 	}
