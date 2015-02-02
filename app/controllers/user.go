@@ -26,15 +26,13 @@ func (c UserController) Login() revel.Result {
 	pwd := c.Params.Get("pwd")
 
 	if user == "admin" && pwd == "admin" {
-		result := CommonResult{
+		return c.RenderJson(CommonResult{
 			ErrorMessage: "",
 			ErrorCode:    0,
 			Result: InnerLoginResult{
 				Id: 1986,
 			},
-		}
-
-		return c.RenderJson(result)
+		})
 	} else {
 		result := CommonResult{
 			ErrorMessage: "错误啦啦啦",

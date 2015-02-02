@@ -26,23 +26,17 @@ func (f FriendController) AddFriend() revel.Result {
 	id, err := models.CreateFriend(&friend)
 	if err != nil {
 		panic(err)
-
-		result := CommonResult{
+		return f.RenderJson(CommonResult{
 			ErrorCode:    999,
 			ErrorMessage: "错误啦啦啦啦",
-		}
-
-		return f.RenderJson(result)
+		})
 	} else {
 		friend.Id = id
-
-		result := CommonResult{
+		return f.RenderJson(CommonResult{
 			ErrorCode:    0,
 			ErrorMessage: "",
 			Result:       friend,
-		}
-
-		return f.RenderJson(result)
+		})
 	}
 }
 
@@ -53,21 +47,16 @@ func (f FriendController) List() revel.Result {
 
 	if err != nil {
 		panic(err)
-
-		result := CommonResult{
+		return f.RenderJson(CommonResult{
 			ErrorCode:    999,
 			ErrorMessage: "出错啦啦啦啦啦",
-		}
-
-		return f.RenderJson(result)
+		})
 	} else {
-		result := CommonResult{
+		return f.RenderJson(CommonResult{
 			ErrorCode:    0,
 			ErrorMessage: "",
 			Result:       friends,
-		}
-
-		return f.RenderJson(result)
+		})
 	}
 }
 
@@ -79,21 +68,16 @@ func (f FriendController) Get() revel.Result {
 
 	if err != nil {
 		panic(err)
-
-		result := CommonResult{
+		return f.RenderJson(CommonResult{
 			ErrorCode:    999,
 			ErrorMessage: "出错啦啦啦啦",
-		}
-
-		return f.RenderJson(result)
+		})
 	} else {
-		result := CommonResult{
+		return f.RenderJson(CommonResult{
 			ErrorCode:    0,
 			ErrorMessage: "",
 			Result:       friend,
-		}
-
-		return f.RenderJson(result)
+		})
 	}
 }
 
