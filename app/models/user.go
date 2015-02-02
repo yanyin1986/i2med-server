@@ -11,7 +11,7 @@ var (
 	DB_PORT = "3306"
 	DB_NAME = "i2med"
 	DB_USER = "root"
-	DB_PWD  = "123456"
+	DB_PWD  = ""
 )
 
 type User struct {
@@ -40,7 +40,7 @@ func init() {
 }
 
 func database() *sql.DB {
-	conn := DB_USER + ":" + DB_PWD + "@tcp(" + DB_HOST + ":" + DB_PORT + ")/" + DB_NAME + "?charset=utf-8"
+	conn := DB_USER + ":" + DB_PWD + "@tcp(" + DB_HOST + ":" + DB_PORT + ")/" + DB_NAME
 	db, err := sql.Open("mysql", conn)
 	if err != nil {
 		log.Println(err)
