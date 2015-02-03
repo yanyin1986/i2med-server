@@ -27,9 +27,18 @@ func (c MessageController) CreateMessage() revel.Result {
 
 	fmt.Println("id=>?", id)
 	if id > 0 {
-		// ok
-		return c.RenderText("ok")
+		result := CommonResult{
+			ErrorMessage: "ok",
+			ErrorCode:    0,
+		}
+
+		return c.RenderJson(result)
 	} else {
-		return c.RenderText("error")
+		result := CommonResult{
+			ErrorMessage: "错误啦啦啦",
+			ErrorCode:    999,
+		}
+
+		return c.RenderJson(result)
 	}
 }
