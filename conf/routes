@@ -17,6 +17,7 @@ GET     /public/*filepath                       Static.Serve("public")
 POST    /user/login          UserController.Login
 POST    /user/register       UserController.Register
 GET     /user/create         UserController.Create
+POST 	/user/detail		 UserController.Detail
 
 # ----message----
 POST    /message/post       MessageController.CreateMessage

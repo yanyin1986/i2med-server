@@ -88,7 +88,7 @@ func GetUserBy(key string, value interface{}) *User {
 
 	err := db.QueryRow(sql, value).Scan(&id, &name, &age, &title, &department, &province, &city)
 	if err != nil {
-		panic(err)
+		//panic(err)
 		return nil
 	}
 
